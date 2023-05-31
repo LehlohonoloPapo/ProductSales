@@ -1,0 +1,12 @@
+C:\Dev\ProductSales\ProductSales\ProductCoreLibrary\bin\Debug\net6.0\ProductCoreLibrary.deps.json
+C:\Dev\ProductSales\ProductSales\ProductCoreLibrary\bin\Debug\net6.0\ProductCoreLibrary.dll
+C:\Dev\ProductSales\ProductSales\ProductCoreLibrary\bin\Debug\net6.0\ProductCoreLibrary.pdb
+C:\Dev\ProductSales\ProductSales\ProductCoreLibrary\obj\Debug\net6.0\ProductCoreLibrary.csproj.AssemblyReference.cache
+C:\Dev\ProductSales\ProductSales\ProductCoreLibrary\obj\Debug\net6.0\ProductCoreLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Dev\ProductSales\ProductSales\ProductCoreLibrary\obj\Debug\net6.0\ProductCoreLibrary.AssemblyInfoInputs.cache
+C:\Dev\ProductSales\ProductSales\ProductCoreLibrary\obj\Debug\net6.0\ProductCoreLibrary.AssemblyInfo.cs
+C:\Dev\ProductSales\ProductSales\ProductCoreLibrary\obj\Debug\net6.0\ProductCoreLibrary.csproj.CoreCompileInputs.cache
+C:\Dev\ProductSales\ProductSales\ProductCoreLibrary\obj\Debug\net6.0\ProductCoreLibrary.dll
+C:\Dev\ProductSales\ProductSales\ProductCoreLibrary\obj\Debug\net6.0\refint\ProductCoreLibrary.dll
+C:\Dev\ProductSales\ProductSales\ProductCoreLibrary\obj\Debug\net6.0\ProductCoreLibrary.pdb
+C:\Dev\ProductSales\ProductSales\ProductCoreLibrary\obj\Debug\net6.0\ref\ProductCoreLibrary.dll
