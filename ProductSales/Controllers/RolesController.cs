@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -13,56 +11,55 @@ namespace ProductSales.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Roles = "Admin,Manager")]
-    public class UsersController : ControllerBase
+    public class RolesController : ControllerBase
     {
         private readonly ProductCoreContext _context;
 
-        public UsersController(ProductCoreContext context)
+        public RolesController(ProductCoreContext context)
         {
             _context = context;
         }
 
-        // GET: api/Users
+        // GET: api/Roles
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<User>>> GetUsers()
+        public async Task<ActionResult<IEnumerable<Role>>> GetRoles()
         {
-          if (_context.Users == null)
+          if (_context.Roles == null)
           {
               return NotFound();
           }
-            return await _context.Users.ToListAsync();
+            return await _context.Roles.ToListAsync();
         }
 
-        // GET: api/Users/5
+        // GET: api/Roles/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<User>> GetUser(Guid id)
+        public async Task<ActionResult<Role>> GetRole(Guid id)
         {
-          if (_context.Users == null)
+          if (_context.Roles == null)
           {
               return NotFound();
           }
-            var user = await _context.Users.FindAsync(id);
+            var role = await _context.Roles.FindAsync(id);
 
-            if (user == null)
+            if (role == null)
             {
                 return NotFound();
             }
 
-            return user;
+            return role;
         }
 
-        // PUT: api/Users/5
+        // PUT: api/Roles/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutUser(Guid id, User user)
+        public async Task<IActionResult> PutRole(Guid id, Role role)
         {
-            if (id != user.UserId)
+            if (id != role.RoleId)
             {
                 return BadRequest();
             }
 
-            _context.Entry(user).State = EntityState.Modified;
+            _context.Entry(role).State = EntityState.Modified;
 
             try
             {
@@ -70,7 +67,7 @@ namespace ProductSales.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!UserExists(id))
+                if (!RoleExists(id))
                 {
                     return NotFound();
                 }
@@ -83,23 +80,23 @@ namespace ProductSales.Controllers
             return NoContent();
         }
 
-        // POST: api/Users
+        // POST: api/Roles
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<User>> PostUser(User user)
+        public async Task<ActionResult<Role>> PostRole(Role role)
         {
-          if (_context.Users == null)
+          if (_context.Roles == null)
           {
-              return Problem("Entity set 'ProductCoreContext.Users'  is null.");
+              return Problem("Entity set 'ProductCoreContext.Roles'  is null.");
           }
-            _context.Users.Add(user);
+            _context.Roles.Add(role);
             try
             {
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateException)
             {
-                if (UserExists(user.UserId))
+                if (RoleExists(role.RoleId))
                 {
                     return Conflict();
                 }
@@ -109,32 +106,32 @@ namespace ProductSales.Controllers
                 }
             }
 
-            return CreatedAtAction("GetUser", new { id = user.UserId }, user);
+            return CreatedAtAction("GetRole", new { id = role.RoleId }, role);
         }
 
-        // DELETE: api/Users/5
+        // DELETE: api/Roles/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteUser(Guid id)
+        public async Task<IActionResult> DeleteRole(Guid id)
         {
-            if (_context.Users == null)
+            if (_context.Roles == null)
             {
                 return NotFound();
             }
-            var user = await _context.Users.FindAsync(id);
-            if (user == null)
+            var role = await _context.Roles.FindAsync(id);
+            if (role == null)
             {
                 return NotFound();
             }
 
-            _context.Users.Remove(user);
+            _context.Roles.Remove(role);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool UserExists(Guid id)
+        private bool RoleExists(Guid id)
         {
-            return (_context.Users?.Any(e => e.UserId == id)).GetValueOrDefault();
+            return (_context.Roles?.Any(e => e.RoleId == id)).GetValueOrDefault();
         }
     }
 }

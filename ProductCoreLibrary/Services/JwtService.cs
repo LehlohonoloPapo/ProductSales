@@ -5,6 +5,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
+using System.Data;
 
 
 namespace ProductCoreLibrary.Services
@@ -21,13 +22,14 @@ namespace ProductCoreLibrary.Services
             _audience = audience;
         }
 
-        public string GenerateToken(string userId, string username, int expirationMinutes = 180)
+        public string GenerateToken(string userId, string role,string username, int expirationMinutes = 180)
         {
             var claims = new[]
             {
                 new Claim(JwtRegisteredClaimNames.Sub, userId),
                 new Claim(JwtRegisteredClaimNames.UniqueName, username),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                new Claim(ClaimTypes.Role, role)
 
             };
 

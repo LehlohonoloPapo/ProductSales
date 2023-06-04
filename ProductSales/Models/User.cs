@@ -19,7 +19,11 @@ public partial class User
 
     public string? PasswordHash { get; set; }
 
+    public Guid? RoleId { get; set; }
+
     public virtual ICollection<Address> Addresses { get; set; } = new List<Address>();
 
     public virtual ICollection<Purchase> Purchases { get; set; } = new List<Purchase>();
+
+    public virtual Role? Role { get; set; }
 }

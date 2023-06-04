@@ -19,7 +19,11 @@ public partial class ProductCoreContext : DbContext
 
     public virtual DbSet<Product> Products { get; set; }
 
+    public virtual DbSet<Province> Provinces { get; set; }
+
     public virtual DbSet<Purchase> Purchases { get; set; }
+
+    public virtual DbSet<Role> Roles { get; set; }
 
     public virtual DbSet<User> Users { get; set; }
 
@@ -49,13 +53,13 @@ public partial class ProductCoreContext : DbContext
             entity.Property(e => e.PostalCode)
                 .HasMaxLength(20)
                 .IsUnicode(false);
-            entity.Property(e => e.Province)
-                .HasMaxLength(255)
-                .IsUnicode(false)
-                .HasColumnName("province");
             entity.Property(e => e.Street)
                 .HasMaxLength(255)
                 .IsUnicode(false);
+
+            entity.HasOne(d => d.Province).WithMany(p => p.Addresses)
+                .HasForeignKey(d => d.ProvinceId)
+                .HasConstraintName("FK_Address_Provinces");
 
             entity.HasOne(d => d.User).WithMany(p => p.Addresses)
                 .HasForeignKey(d => d.UserId)
@@ -81,6 +85,14 @@ public partial class ProductCoreContext : DbContext
                 .IsUnicode(false);
         });
 
+        modelBuilder.Entity<Province>(entity =>
+        {
+            entity.HasKey(e => e.ProvinceId).HasName("PK__Province__FD0A6F83B0FD1A34");
+
+            entity.Property(e => e.ProvinceId).ValueGeneratedNever();
+            entity.Property(e => e.ProvinceName).HasMaxLength(50);
+        });
+
         modelBuilder.Entity<Purchase>(entity =>
         {
             entity.HasKey(e => e.PurchaseId).HasName("PK__Purchase__6B0A6BBEDCEC827E");
@@ -100,9 +112,24 @@ public partial class ProductCoreContext : DbContext
                 .HasConstraintName("FK__Purchase__UserId__46E78A0C");
         });
 
+        modelBuilder.Entity<Role>(entity =>
+        {
+            entity.HasKey(e => e.RoleId).HasName("PK__Roles__8AFACE1AB762F028");
+
+            entity.Property(e => e.RoleId).ValueGeneratedNever();
+            entity.Property(e => e.Description)
+                .HasMaxLength(255)
+                .IsUnicode(false);
+            entity.Property(e => e.RoleName)
+                .HasMaxLength(50)
+                .IsUnicode(false);
+        });
+
         modelBuilder.Entity<User>(entity =>
         {
             entity.HasKey(e => e.UserId).HasName("PK__Users__1788CC4CE5C23C2B");
+
+            entity.HasIndex(e => e.UserName, "idx_Username");
 
             entity.Property(e => e.UserId).ValueGeneratedNever();
             entity.Property(e => e.Email)
@@ -123,6 +150,10 @@ public partial class ProductCoreContext : DbContext
             entity.Property(e => e.UserName)
                 .HasMaxLength(255)
                 .IsUnicode(false);
+
+            entity.HasOne(d => d.Role).WithMany(p => p.Users)
+                .HasForeignKey(d => d.RoleId)
+                .HasConstraintName("FK__Users__RoleId__628FA481");
         });
 
         OnModelCreatingPartial(modelBuilder);

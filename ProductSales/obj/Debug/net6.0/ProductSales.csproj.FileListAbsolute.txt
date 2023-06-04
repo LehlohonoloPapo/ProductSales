@@ -284,3 +284,4 @@ C:\Dev\ProductSales\ProductSales\ProductSales\obj\Debug\net6.0\ProductSales.genr
 C:\Dev\ProductSales\ProductSales\ProductSales\obj\Debug\net6.0\ref\ProductSales.dll
 C:\Dev\ProductSales\ProductSales\ProductSales\bin\Debug\net6.0\ProductCoreLibrary.dll
 C:\Dev\ProductSales\ProductSales\ProductSales\bin\Debug\net6.0\ProductCoreLibrary.pdb
+C:\Dev\ProductSales\ProductSales\ProductSales\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

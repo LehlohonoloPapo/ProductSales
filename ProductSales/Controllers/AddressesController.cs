@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -11,6 +12,7 @@ namespace ProductSales.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class AddressesController : ControllerBase
     {
         private readonly ProductCoreContext _context;
@@ -22,6 +24,7 @@ namespace ProductSales.Controllers
 
         // GET: api/Addresses
         [HttpGet]
+        [Authorize(Roles = "Admin,Manager")]
         public async Task<ActionResult<IEnumerable<Address>>> GetAddresses()
         {
           if (_context.Addresses == null)
@@ -49,12 +52,28 @@ namespace ProductSales.Controllers
             return address;
         }
 
+        // GET: api/Addresses/5
+        [HttpGet]
+        [Route("/GetAddressByUserId/{userId}")]
+
+        public async Task<ActionResult<Address>> GetAddressByUserId(Guid userId)
+        {
+            var address = await _context.Addresses.FirstOrDefaultAsync(x=>x.UserId==userId);
+
+            if (address == null)
+            {
+                return NotFound("Address not found");
+            }
+
+            return Ok(address);
+        }
+
         // PUT: api/Addresses/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutAddress(Guid id, Address address)
+        [HttpPut("{userId}")]
+        public async Task<IActionResult> PutAddress(Guid userId, Address address)
         {
-            if (id != address.AddressId)
+            if (userId != address.UserId)
             {
                 return BadRequest();
             }
@@ -67,7 +86,7 @@ namespace ProductSales.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!AddressExists(id))
+                if (!AddressExists(userId))
                 {
                     return NotFound();
                 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -11,6 +12,7 @@ namespace ProductSales.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class PurchasesController : ControllerBase
     {
         private readonly ProductCoreContext _context;
@@ -22,6 +24,7 @@ namespace ProductSales.Controllers
 
         // GET: api/Purchases
         [HttpGet]
+        [Authorize(Roles = "Admin,Manager")]
         public async Task<ActionResult<IEnumerable<Purchase>>> GetPurchases()
         {
           if (_context.Purchases == null)

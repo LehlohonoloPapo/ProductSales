@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "bYdbrfp10wAm6gusLrpiGfVD/Wb2Hxt6kPelMR6QzeyEjo//Tsh8PkOGroQzp8A43HIygVBy4/Lo6KLRP2UX6A==",
+  "dgSpecHash": "A86eYkRXp9X/ajMMOqhEdxqkHRJiCsLc8ZgSfPlsIgbpI+1yvtJeI20K9TEut6DoxjLBikaQttFaCiSkcy8koA==",
   "success": true,
   "projectFilePath": "C:\\Dev\\ProductSales\\ProductSales\\ProductSales\\ProductSales.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,7 @@
     "C:\\Users\\lehlo\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\lehlo\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",
     "C:\\Users\\lehlo\\.nuget\\packages\\messagepackanalyzer\\2.1.152\\messagepackanalyzer.2.1.152.nupkg.sha512",
+    "C:\\Users\\lehlo\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.16\\microsoft.aspnetcore.authentication.jwtbearer.6.0.16.nupkg.sha512",
     "C:\\Users\\lehlo\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\6.0.0\\microsoft.aspnetcore.razor.language.6.0.0.nupkg.sha512",
     "C:\\Users\\lehlo\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\5.0.0\\microsoft.bcl.asyncinterfaces.5.0.0.nupkg.sha512",
     "C:\\Users\\lehlo\\.nuget\\packages\\microsoft.build\\17.3.2\\microsoft.build.17.3.2.nupkg.sha512",
@@ -120,7 +121,7 @@
     "C:\\Users\\lehlo\\.nuget\\packages\\system.composition.hosting\\1.0.31\\system.composition.hosting.1.0.31.nupkg.sha512",
     "C:\\Users\\lehlo\\.nuget\\packages\\system.composition.runtime\\1.0.31\\system.composition.runtime.1.0.31.nupkg.sha512",
     "C:\\Users\\lehlo\\.nuget\\packages\\system.composition.typedparts\\1.0.31\\system.composition.typedparts.1.0.31.nupkg.sha512",
-    "C:\\Users\\lehlo\\.nuget\\packages\\system.configuration.configurationmanager\\6.0.0\\system.configuration.configurationmanager.6.0.0.nupkg.sha512",
+    "C:\\Users\\lehlo\\.nuget\\packages\\system.configuration.configurationmanager\\6.0.1\\system.configuration.configurationmanager.6.0.1.nupkg.sha512",
     "C:\\Users\\lehlo\\.nuget\\packages\\system.console\\4.3.0\\system.console.4.3.0.nupkg.sha512",
     "C:\\Users\\lehlo\\.nuget\\packages\\system.diagnostics.debug\\4.3.0\\system.diagnostics.debug.4.3.0.nupkg.sha512",
     "C:\\Users\\lehlo\\.nuget\\packages\\system.diagnostics.diagnosticsource\\5.0.0\\system.diagnostics.diagnosticsource.5.0.0.nupkg.sha512",
