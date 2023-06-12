@@ -1,35 +1,34 @@
-﻿using System.Diagnostics;
-using System.Net;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Logging;
+﻿using System.Net;
 using Newtonsoft.Json;
-
+using Microsoft.AspNetCore.Http;
 namespace ProductSales.Middleware;
-public class GlobalExceptionHandlingMiddleware
+using Serilog;
+public class GlobalExceptionHandling
 {
+   
     private readonly RequestDelegate _next;
-    private readonly ILogger _logger;
 
-    public GlobalExceptionHandlingMiddleware(RequestDelegate next, ILogger logger)
+    public GlobalExceptionHandling( RequestDelegate next)
     {
+        
         _next = next;
-        _logger = logger;
     }
 
     public async Task InvokeAsync(HttpContext context)
     {
         try
         {
+            Log.Logger.Information(context?.Request?.Path.Value.ToString(), context.Request.Cookies);
             await _next(context);
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, ex.Message);
+            Log.Logger.Error(ex, "Unhandled exception occurred");
             await HandleExceptionAsync(context, ex);
         }
     }
 
-    private static async Task<Task> HandleExceptionAsync(HttpContext context, Exception exception)
+    private static async Task<Task> HandleExceptionAsync(HttpContext context, Exception? exception)
     {   
         // Perform any necessary error handling, logging, or response customization here
         // For example, you can set the response status code, return a JSON error response, etc.
