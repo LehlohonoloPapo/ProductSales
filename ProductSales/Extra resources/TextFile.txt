@@ -3,3 +3,7 @@ dotnet ef dbcontext scaffold "Server=(localdb)\MSSQLLocalDB;Initial Catalog=Prod
 
 
 Scaffold-DbContext "Server=(localdb)\MSSQLLocalDB;Initial Catalog=ProductCore;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models --force
+
+
+
+Scaffold-DbContext "ProductSalesContext" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -force

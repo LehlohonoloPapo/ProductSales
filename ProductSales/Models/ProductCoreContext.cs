@@ -17,6 +17,8 @@ public partial class ProductCoreContext : DbContext
 
     public virtual DbSet<Address> Addresses { get; set; }
 
+    public virtual DbSet<Category> Categories { get; set; }
+
     public virtual DbSet<Product> Products { get; set; }
 
     public virtual DbSet<Province> Provinces { get; set; }
@@ -29,7 +31,7 @@ public partial class ProductCoreContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server = tcp:paposerver.database.windows.net, 1433; Initial Catalog = ProductCoreDB; Persist Security Info=False;User ID = lehlohonolo.papo; Password=1445NAre$;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout = 30;");
+        => optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Initial Catalog=ProductCore;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -66,6 +68,15 @@ public partial class ProductCoreContext : DbContext
                 .HasConstraintName("FK__Address__UserId__4D94879B");
         });
 
+        modelBuilder.Entity<Category>(entity =>
+        {
+            entity.HasKey(e => e.CategoryId).HasName("PK__categori__23CAF1D8583734C3");
+
+            entity.Property(e => e.CategoryName)
+                .HasMaxLength(255)
+                .IsUnicode(false);
+        });
+
         modelBuilder.Entity<Product>(entity =>
         {
             entity.HasKey(e => e.ProductId).HasName("PK__Products__2D10D16A3A331BD7");
@@ -83,6 +94,11 @@ public partial class ProductCoreContext : DbContext
             entity.Property(e => e.ProductName)
                 .HasMaxLength(255)
                 .IsUnicode(false);
+            entity.Property(e => e.SalePercentage).HasColumnType("decimal(5, 2)");
+
+            entity.HasOne(d => d.Category).WithMany(p => p.Products)
+                .HasForeignKey(d => d.CategoryId)
+                .HasConstraintName("FK__Products__Catego__656C112C");
         });
 
         modelBuilder.Entity<Province>(entity =>

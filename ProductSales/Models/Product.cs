@@ -17,5 +17,13 @@ public partial class Product
 
     public string? ImageUrls { get; set; }
 
+    public bool? IsOnSale { get; set; }
+
+    public decimal? SalePercentage { get; set; }
+
+    public int? CategoryId { get; set; }
+
+    public virtual Category? Category { get; set; }
+
     public virtual ICollection<Purchase> Purchases { get; set; } = new List<Purchase>();
 }

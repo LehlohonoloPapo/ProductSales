@@ -5,7 +5,9 @@ VisualStudioVersion = 17.3.32804.467
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductSales", "ProductSales.csproj", "{A32D70E1-D0C7-4224-BE4C-B67DA32E34F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductCoreLibrary", "..\ProductCoreLibrary\ProductCoreLibrary.csproj", "{9EA13A23-945D-465A-8BD6-509FEEA8B7BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductCoreLibrary", "..\ProductCoreLibrary\ProductCoreLibrary.csproj", "{9EA13A23-945D-465A-8BD6-509FEEA8B7BB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{86FA8CE3-33AF-4D83-9FAA-9540F67DE47E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

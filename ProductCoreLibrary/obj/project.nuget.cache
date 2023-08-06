@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "OrPvAxLwNYdlJagB5pvWPikhOfKgZmvPWV3tJqHhGiXedD4gMl8FENa35yWRSZCzqmiS185HkCPhCnrA55dSig==",
+  "dgSpecHash": "zxMAARUizsnnMOre1AYbxglhTN2fMhvcpxEMPHPn1gk8h0xiZ1LRSWaR5OonIyuD7Hv4s/CG4+KYxlF+Q6apgw==",
   "success": true,
   "projectFilePath": "C:\\Dev\\ProductSales\\ProductSales\\ProductCoreLibrary\\ProductCoreLibrary.csproj",
   "expectedPackageFiles": [
@@ -48,7 +48,10 @@
     "C:\\Users\\lehlo\\.nuget\\packages\\system.text.encoding\\4.3.0\\system.text.encoding.4.3.0.nupkg.sha512",
     "C:\\Users\\lehlo\\.nuget\\packages\\system.text.encodings.web\\4.7.2\\system.text.encodings.web.4.7.2.nupkg.sha512",
     "C:\\Users\\lehlo\\.nuget\\packages\\system.text.json\\4.7.2\\system.text.json.4.7.2.nupkg.sha512",
-    "C:\\Users\\lehlo\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
+    "C:\\Users\\lehlo\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
+    "C:\\Users\\lehlo\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.16\\microsoft.netcore.app.ref.6.0.16.nupkg.sha512",
+    "C:\\Users\\lehlo\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.16\\microsoft.windowsdesktop.app.ref.6.0.16.nupkg.sha512",
+    "C:\\Users\\lehlo\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.16\\microsoft.aspnetcore.app.ref.6.0.16.nupkg.sha512"
   ],
   "logs": []
 }

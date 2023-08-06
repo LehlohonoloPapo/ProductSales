@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "rPqZ3j8EKxULSHVYQ+diatC3II3wAeCoaOb8CUfjZwSCGqTiPhvBa4xMytM6GTmpl8PwxOO057PtcyetRmwy4A==",
+  "dgSpecHash": "jX4G5U/1C/6UYAtt+K0TcA2KgC4HRKavvI2sQ/K9bTMTm3S7A9ecSwhFvIL2kqp9oZiUjrSszmE+rBihMmQBbQ==",
   "success": true,
   "projectFilePath": "C:\\Dev\\ProductSales\\ProductSales\\ProductSales\\ProductSales.csproj",
   "expectedPackageFiles": [
@@ -220,7 +220,11 @@
     "C:\\Users\\lehlo\\.nuget\\packages\\system.threading.timer\\4.3.0\\system.threading.timer.4.3.0.nupkg.sha512",
     "C:\\Users\\lehlo\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
     "C:\\Users\\lehlo\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
-    "C:\\Users\\lehlo\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
+    "C:\\Users\\lehlo\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
+    "C:\\Users\\lehlo\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.16\\microsoft.netcore.app.ref.6.0.16.nupkg.sha512",
+    "C:\\Users\\lehlo\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.16\\microsoft.windowsdesktop.app.ref.6.0.16.nupkg.sha512",
+    "C:\\Users\\lehlo\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.16\\microsoft.aspnetcore.app.ref.6.0.16.nupkg.sha512",
+    "C:\\Users\\lehlo\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.16\\microsoft.netcore.app.host.win-x64.6.0.16.nupkg.sha512"
   ],
   "logs": [
     {

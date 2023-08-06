@@ -1,0 +1,47 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .menu-toggle {
+    display: none; /* Hide the menu toggle by default */
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  .menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .menu li:last-child {
+    margin-right: 0;
+  }
+  .menu a {
+    text-decoration: none;
+    color: black;
+  }
+
+  .container{
+    width: 100vw !important;
+    max-width: 100vw !important;
+
+  }
+  @media screen and (max-width: 768px) {
+    .menu {
+      display: none;
+    }
+    .menu-toggle {
+      display: block;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    li{
+        width: 4vw;
+        height: 3vh;
+    }
+    ul{
+        height: 4vh;
+    }
+  }

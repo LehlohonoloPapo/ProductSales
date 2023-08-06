@@ -1,0 +1,26 @@
+  .container{
+    background-color: var(--black-bg);
+    color: rgb(255, 255, 255);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    /* display: flex; */
+    align-items: center;
+}
+.contact a{
+  padding:0;
+}
+input{
+  background-color: var(--black-bg);
+  border-bottom: 2px solid white;
+}
+input:focus-visible{
+  outline: 0;
+}
+.company{
+  background-color:#757575;
+}
+.container {
+  max-width: 100% !important;
+}
