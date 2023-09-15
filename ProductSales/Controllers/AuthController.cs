@@ -49,7 +49,6 @@ namespace ProductSales.Controllers
             }
             return Unauthorized();
         }
-
       
         [HttpPost]
         [Route("register")]
@@ -73,7 +72,6 @@ namespace ProductSales.Controllers
                 }
                 else
                 {
-                    //throw new Exception("No role available");
                     return BadRequest(new Exception("No role available"));
                 }
             }
@@ -86,8 +84,6 @@ namespace ProductSales.Controllers
                 return BadRequest("Username already exists");
             }
 
-            //Create new user
-
             var newUser = new User
             {
                 UserName = user.UserName,
@@ -99,10 +95,8 @@ namespace ProductSales.Controllers
                 LastName = user.LastName,
                 RoleId= userRole
             };
-            //add user to context
             _context.Users.Add(newUser);
 
-            //Save changes
             await _context.SaveChangesAsync();
 
             return Ok("Registration Successful");
@@ -112,12 +106,7 @@ namespace ProductSales.Controllers
         [Route("logout")]
         public IActionResult Logout()
         {
-            // Clear the user's authentication cookies
-           // await HttpContext.SignOutAsync();
-
-            // Perform any additional logout logic if needed
-
-            // Return a success message or appropriate response
+          
             return Ok("Logout successful");
         }
 
