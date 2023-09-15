@@ -4,13 +4,38 @@
     font-weight: 500;
 }
 .row{
-    background-color: rgb(18 16 16 / 70%);
+   
 
+}
+.row1{
+    background-color: rgb(151 151 151 / 70%);
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px rgb(41 41 41 / 30%);
 }
 p{
     font-size: 21px;
     line-height: 32px;
 }
+
+.groups{
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px rgb(41 41 41 / 30%);
+
+}
+
+.group-1{
+    height:4vh;
+    border-radius: 5px 5px 0 0;
+    background-image: linear-gradient( to right, #7F7FD5, #91EAE4);
+
+}
+.product{
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px rgb(41 41 41 / 30%);
+}
 h2{
     
+}
+.container{
+    margin-left: 15vw !important; 
 }

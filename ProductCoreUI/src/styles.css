@@ -1,13 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
-@import 'tailwindcss/base';
+/* @import 'tailwindcss/base';
 @import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+/* @import 'tailwindcss/components'; */
+@import 'tailwindcss/utilities'; 
 
 :root{
     --black-bg:#121212;
     --white-f-color:#fff
 }
 
-body{
+html,body{
     color:black;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
+.btn-blue:hover {
+    
+  }
